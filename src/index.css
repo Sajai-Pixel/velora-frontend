@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+.px-auto {
+    padding-inline: calc(var(--spacing)*6)
+}
+
+@media (min-width: 48rem) {
+    .px-auto {
+        padding-inline: calc(var(--spacing)*16)
+    }
+}
+
+@media (min-width: 64rem) {
+    .px-auto {
+        padding-inline: calc(var(--spacing)*24)
+    }
+}
+
+@media (min-width: 80rem) {
+    .px-auto {
+        padding-inline: calc(var(--spacing)*36)
+    }
+}
+
+body {
+    font-family: "Google Sans", sans-serif;
+}
