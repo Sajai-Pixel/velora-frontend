@@ -19,11 +19,12 @@ import AdminLayout from './layout/AdminLayout'
 import Add from './admin/components/Add'
 import List from './admin/components/List'
 import AdminLogin from './admin/components/AdminLogin'
-import ProtectedRoute from './admin/components/ProtectedRoute'
+import AdminProtectedRoute from './admin/components/ProtectedRoute'
 import AdminDashboard from './admin/components/AdminDashboard'
 import Customers from './admin/components/Customers'
 import AdminOrders from './admin/components/Orders'
 import Checkout from './pages/Checkout'
+import ProtectedRoute from './components/ProtectedRoute'
 
 const MainLayout = () => {
   return (
@@ -49,15 +50,17 @@ const App = () => {
           <Route path="/wishlist" element={<Wishlist />} />
         </Route>
 
-        <Route element={<AccountLayout />}>
-          <Route path="/account/profile" element={<Profile />} />
-          <Route path="/account/orders" element={<Orders />} />
-          <Route path="/account/addresses" element={<Addresses />} />
-          <Route path="/account/settings" element={<Settings />} />
+        <Route element={<ProtectedRoute />}>
+          <Route element={<AccountLayout />}>
+            <Route path="/account/profile" element={<Profile />} />
+            <Route path="/account/orders" element={<Orders />} />
+            <Route path="/account/addresses" element={<Addresses />} />
+            <Route path="/account/settings" element={<Settings />} />
+          </Route>
         </Route>
 
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route element={<ProtectedRoute />}>
+        <Route element={<AdminProtectedRoute />}>
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminDashboard />} />
             <Route path="add" element={<Add />} />

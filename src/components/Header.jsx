@@ -2,11 +2,12 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/velora.png'
 import { useSelector } from 'react-redux'
+import { useAuth } from '../context/AuthContext'
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const user = JSON.parse(localStorage.getItem('user'))
+  const { user } = useAuth();
 
   const wishlist = useSelector((state) => state.cart.wishlist)
   const cartItems = useSelector((state) => state.cart.items)
