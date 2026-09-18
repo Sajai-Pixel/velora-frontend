@@ -25,7 +25,7 @@ const FeaturedProducts = () => {
                     <ProductCard key={product._id} product={product} />
                 ))}
             </div>
-            <div className="flex items-center justify-center pt-12"><a href="/products" class="px-6 py-2.5 text-white bg-black rounded-lg hover:bg-black/80 transition-colors">View All Products</a></div>
+            <div className="flex items-center justify-center pt-12"><a href="/products" className="px-6 py-2.5 text-white bg-black rounded-lg hover:bg-black/80 transition-colors">View All Products</a></div>
         </section>
     )
 }
