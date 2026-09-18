@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { addToCart, addToWishlist, removeFromWishlist } from '../redux/cartSlice'
 import toast from 'react-hot-toast'
+import cartIcon from '../assets/cart.svg'
 
 const ProductCard = ({ product }) => {
   const thumbnail = product?.images?.[0]
@@ -113,7 +114,7 @@ const ProductCard = ({ product }) => {
             className="flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm transition-all duration-200 hover:scale-110 active:scale-90"
           >
             <img
-              src="/src/assets/cart.svg"
+              src={cartIcon}
               alt="Add to cart"
               className="h-3.5 w-3.5"
             />
